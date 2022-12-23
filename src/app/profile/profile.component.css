@@ -1,0 +1,10 @@
+.mat-card {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.header-image {
+  background-image: url('https://fastrp.ru/uploads/monthly_2021_02/original.thumb.gif.fc01ffda2ffd0f0822583ac86925049e.gif');
+  background-size: cover;
+  margin-top: -10px;
+}

@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>{{actionBtn}} запись</h1>
+<div mat-dialog-content>
+  <form #f="ngForm" [formGroup]="form" autocomplete="off">
+    <mat-form-field appearance="outline">
+      <mat-label>Название продукта</mat-label>
+      <input matInput type="text" formControlName="productname" placeholder="Поле ввода...">
+      <mat-error *ngIf="form.controls['productname'].errors?.['required']">Заполнение обязательно!</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" (click)="onClose()" mat-dialog-close>Закрыть</button>
+  <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="onSubmit()">{{actionBtn}}</button>
+</div>

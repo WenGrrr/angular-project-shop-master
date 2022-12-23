@@ -1,0 +1,26 @@
+<div id="app" class="wrapper">
+  <mat-toolbar color="primary" class="navbar">
+  <span>
+    <a href="/" class="univ-link">Магазин-склад</a>
+  </span>
+    <span class="spacer"></span>
+    <a mat-button routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Главная</a>
+    <div *ngIf="isLoggedIn">
+      <a mat-button routerLink="/product" routerLinkActive="active">Продукты</a>
+      <a mat-button routerLink="/seller" routerLinkActive="active">Продавцы</a>
+      <a mat-button routerLink="/buyer" routerLinkActive="active">Покупатели</a>
+      <a mat-button routerLink="/orders" routerLinkActive="active">Заказы</a>
+    </div>
+    <div *ngIf="!isLoggedIn">
+      <a mat-button routerLink="/login" routerLinkActive="active">Логин</a>
+      <a mat-button routerLink="/register" routerLinkActive="active">Регистрация</a>
+    </div>
+    <div *ngIf="isLoggedIn">
+      <a mat-button routerLink="/profile" routerLinkActive="active">Профиль</a>
+      <a mat-button href (click)="logout()" routerLinkActive="active">Выйти</a>
+    </div>
+  </mat-toolbar>
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-title *ngIf="!currentUser.role">Добро пожаловать!</mat-card-title>
+    <mat-card-title *ngIf="currentUser.role">Добро пожаловать, {{currentUser.login}}!</mat-card-title>
+
+    <mat-card-title>Вы попали на страницу склада-магазина!</mat-card-title>
+    <mat-card-title *ngIf="currentUser.role">Так как ваша роль: {{currentUser.role}}.</mat-card-title>
+    <mat-card-title *ngIf="!currentUser.role">Здесь вы сможете просматривать заказы.</mat-card-title>
+    <mat-card-title *ngIf="currentUser.role?.toUpperCase()==='ROLE_ADMIN'">Вам разрешено добавлять, изменять и удалять все записи.</mat-card-title>
+    <mat-card-title *ngIf="currentUser.role?.toUpperCase()==='ROLE_USER'">Вам разрешено только просматривать
+      информацию о внесенных записях.</mat-card-title>
+  </mat-card-header>
+    <img mat-card-image style="max-height: 270px;" src="https://play-lh.googleusercontent.com/dbY_2K9PV8YAUYGgDlyHKG2hAT5k9yJ1F1V0sDhu_dO3_HXfNab7XICkXc23f3OgDZZI" alt="Фото пользователя">
+    <mat-card-content>
+  </mat-card-content>
+</mat-card>

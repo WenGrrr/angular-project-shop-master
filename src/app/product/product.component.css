@@ -1,0 +1,42 @@
+table {
+  width: 100%;
+}
+
+.table-container {
+  position: relative;
+  max-height: 620px;
+  overflow: auto;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.button-container {
+  margin: 10px auto;
+}
+
+.table-button + .table-button {
+  margin-left: 8px;
+}
+
+td, th {
+  width: 25%;
+}
+
+.select-table-box{
+  width: 15%;
+  overflow: initial;
+}
+
+.container{
+  max-width: 700px;
+}
+
+.mat-paginator-sticky {
+  bottom: 0;
+  position: sticky;
+  z-index: 10;
+}
+

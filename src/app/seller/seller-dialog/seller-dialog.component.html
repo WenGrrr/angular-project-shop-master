@@ -1,0 +1,48 @@
+<h1 mat-dialog-title>{{actionBtn}} запись</h1>
+<div mat-dialog-content>
+  <form #f="ngForm" [formGroup]="form" autocomplete="off">
+    <mat-form-field appearance="outline">
+      <mat-label>ФИО</mat-label>
+      <input matInput type="text" formControlName="fio" placeholder="Поле ввода...">
+      <mat-error *ngIf="form.controls['fio'].errors?.['required']">Заполнение обязательно!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Дата рождения</mat-label>
+      <input matInput [matDatepicker]="picker" [max]="maxDate" formControlName="birthday">
+      <mat-hint>ДД/ММ/ГГГГ</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="form.controls['birthday'].errors?.['required']">Заполнение обязательно!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Пол</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option></mat-option>
+        <mat-option value="м">Мужской</mat-option>
+        <mat-option value="ж">Женский</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Должность</mat-label>
+      <input matInput type="text" formControlName="title" placeholder="Поле ввода...">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Название компании</mat-label>
+      <input matInput type="text" formControlName="companyName" placeholder="Поле ввода...">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Телефон</mat-label>
+      <input matInput type="tel" formControlName="phone" placeholder="Поле ввода...">
+      <mat-error *ngIf="form.controls['phone'].errors?.['minlength']">
+        Введите минимум 6 символов
+      </mat-error>
+      <mat-error *ngIf="form.controls['phone'].errors?.['pattern']">
+        Введите только цифры
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" (click)="onClose()" mat-dialog-close>Закрыть</button>
+  <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="onSubmit()">{{actionBtn}}</button>
+</div>

@@ -1,0 +1,50 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.container-fluid{
+  flex: 1 0 auto;
+  margin-bottom: 10px;
+}
+
+.mat-toolbar {
+  background-color: blue;
+  color: yellow;
+  min-height: 80px;
+}
+
+.mat-button {
+  color: white;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.footer {
+  flex: 0 0 auto;
+}
+
+.footer-text {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.active {
+  font-weight: bold;
+  background-color: #0f34ef;
+}
+
+.active:active {
+  font-weight: bold;
+  background-color: yellow;
+}
+
+.univ-link {
+  color: white;
+  text-decoration: none;
+}
+
